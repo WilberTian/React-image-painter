@@ -1,0 +1,38 @@
+.tool-bar-pop-component {
+	display: flex;
+	position: absolute;
+	border: 1px solid #999;
+    border-radius: 4px;
+    left: -2px;
+    background-color: #fff;
+    padding: 2px 8px;
+    z-index: 9999;
+    cursor: default;
+
+    .divider {
+    	display: block;
+    	border-right: 1px solid #d7d7d7;
+    	margin: 6px 12px;
+    }
+
+}
+
+.tool-bar-pop-component::before {
+	position: absolute;
+	top: -6px;
+    left: 7px;
+	content: ' ';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #999;
+}
+
+.tool-bar-pop-component::after {
+	position: absolute;
+	top: -5px;
+    left: 8px;
+	content: ' ';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
