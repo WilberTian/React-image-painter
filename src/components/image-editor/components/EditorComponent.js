@@ -39,7 +39,6 @@ export default class EditorComponent extends PureComponent {
 
         const img = new Image();
         img.onload = () => {
-            const imgInstance = new fabric.Image(img);
             editor.setWidth(img.width);
             editor.setHeight(img.height);
 
@@ -50,8 +49,6 @@ export default class EditorComponent extends PureComponent {
                 editor.setWidth(img.width * zoomFactor);
                 editor.setHeight(img.height * zoomFactor);
             }
-
-            editor.setBackgroundImage(imgInstance);
 
             this._initImageEditor();
         };
