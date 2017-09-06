@@ -40,6 +40,8 @@ export default class EditorComponent extends PureComponent {
         const img = new Image();
         img.onload = () => {
             const imgInstance = new fabric.Image(img);
+            editor.setWidth(img.width);
+            editor.setHeight(img.height);
 
             // zoom the canvas based on the container size
             if (img.width > containerWidth) {
@@ -157,7 +159,6 @@ export default class EditorComponent extends PureComponent {
                 }
             });
         } else if (activeTool === 'font') {
-            fabric.log('jpeg dataURL with low quality: ', this._editor.toDataURL('png'));
             let readyToAddText = true;
             this._editor.isDrawingMode = false;
 
