@@ -35,10 +35,16 @@ export default class EditorComponent extends PureComponent {
 
         setEditorObj(editor);
 
-        editor.setBackgroundImage(imgSrc);
-
         const img = new Image();
         img.onload = () => {
+            // fix the CORS issue of image
+            editor.setBackgroundImage(new fabric.Image(img, {
+                originX: 'left',
+                originY: 'top',
+                left: 0,
+                top: 0
+            }), editor.renderAll.bind(editor));
+
             editor.setWidth(img.width);
             editor.setHeight(img.height);
 
